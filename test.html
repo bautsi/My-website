@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      #container {
+        position: relative;
+      }
+
+      #container section {
+        height: 100vh;
+        width: 100vw;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: transform 0.8s ease-in-out;
+      }
+
+      #scroll-indicator {
+        position: fixed;
+        right: 10px;
+        top: 50%;
+        /* 其他樣式 */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <section id="page1" style="background-color: red">第一頁內容</section>
+      <section
+        id="page2"
+        style="background-color: green; transform: translateY(100%)"
+      >
+        第二頁內容
+      </section>
+      <section
+        id="page3"
+        style="background-color: blue; transform: translateY(200%)"
+      >
+        第三頁內容
+      </section>
+      <!-- 更多頁面 -->
+    </div>
+    <div id="scroll-indicator"></div>
+
+    <script>
+      let currentIndex = 0;
+      let isScrolling = false;
+
+      document.addEventListener("wheel", handleScroll);
+
+      function handleScroll(event) {
+        if (isScrolling) return;
+        isScrolling = true;
+        setTimeout(() => {
+          isScrolling = false;
+        }, 800); // 和 transition 時間相同
+
+        if (event.deltaY > 0) {
+          currentIndex = Math.min(currentIndex + 1, 2); // 索引加1但不超過2
+        } else {
+          currentIndex = Math.max(currentIndex - 1, 0); // 索引減1但不小於0
+        }
+        updateSections();
+      }
+
+      function updateSections() {
+        const sections = document.querySelectorAll("#container section");
+        sections.forEach((section, index) => {
+          section.style.transform = `translateY(${
+            (index - currentIndex) * 100
+          }%)`;
+        });
+        updateScrollIndicator();
+      }
+
+      function updateScrollIndicator() {
+        // 更新滾動指示器
+      }
+    </script>
+  </body>
+</html>
