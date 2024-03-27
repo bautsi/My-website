@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #e4e4e4;
+      }
+
+      .container {
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+        max-width: 1200px; /* 或您想要的最大寬度 */
+      }
+
+      .card {
+        position: relative;
+        width: 30%; /* 卡片寬度，根據需要調整 */
+        height: 240px;
+        background-image: var(--image-src);
+        background-position: center;
+        background-size: cover;
+        transition: background 400ms ease;
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+      }
+
+      figcaption {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        transform: translateY(100%);
+        background: rgba(0, 0, 0, 0.5);
+        transition: transform 400ms ease;
+      }
+
+      .card:hover figcaption {
+        transform: translateY(0);
+      }
+
+      .info h3 {
+        color: white;
+        padding: 20px;
+        font-size: 1.2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <figure
+        class="card"
+        style="--image-src: url('https://source.unsplash.com/78A265wPiO4')"
+      >
+        <figcaption>
+          <span class="info">
+            <h3>The Hills</h3>
+          </span>
+        </figcaption>
+      </figure>
+      <figure
+        class="card"
+        style="--image-src: url('https://source.unsplash.com/TFyi0QOx08c')"
+      >
+        <figcaption>
+          <span class="info">
+            <h3>The Forest</h3>
+          </span>
+        </figcaption>
+      </figure>
+      <figure
+        class="card"
+        style="--image-src: url('https://source.unsplash.com/PP8Escz15d8')"
+      >
+        <figcaption>
+          <span class="info">
+            <h3>The Desert</h3>
+          </span>
+        </figcaption>
+      </figure>
+    </div>
+  </body>
+</html>

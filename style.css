@@ -156,7 +156,12 @@ img {
   flex-direction: column;
   align-items: center;
   height: 100vh;
-  background-color: #f4efec;
+  background-color: #dbd2c9;
+  /* background-image: url(images/danceBackground.jpg); */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 #radio {
@@ -174,7 +179,6 @@ img {
   padding: 0.25rem;
   width: 300px;
   font-size: 14px;
-  box-shadow: 5px 5px 10px #949494, -5px -5px 10px #ffffff;
 }
 
 #radio .radio {
@@ -270,6 +274,63 @@ img {
 #forthPage {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   align-items: center;
+
   height: 100vh;
+  background-color: #e4e4e4;
+}
+
+#interest h1 {
+  font-size: 2.5rem;
+  margin-top: 20vh;
+}
+
+.container {
+  display: flex;
+  width: 80%;
+  justify-content: space-around;
+  margin-bottom: 25vh;
+}
+
+.card {
+  width: 30%;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.card h3 {
+  position: absolute;
+  bottom: -60px; /* 隱藏在卡片下方 */
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 1.8rem;
+  transition: bottom 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card:hover h3 {
+  bottom: 27%; /* 當 hover 時，文字上移 */
+}
+
+#fifthPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  height: 100vh;
+  /* background-color: #e4e4e4; */
 }

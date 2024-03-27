@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: #e4e4e4;
+      }
+
+      .container {
+        display: flex;
+        width: 80%;
+        justify-content: space-around;
+      }
+
+      .card {
+        width: 30%;
+        height: 200px;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+      }
+
+      .card h3 {
+        position: absolute;
+        bottom: -50px; /* 隱藏在卡片下方 */
+        width: 100%;
+        text-align: center;
+        color: white;
+        font-size: 1.5rem;
+        transition: bottom 0.3s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-10px);
+      }
+
+      .card:hover h3 {
+        bottom: 20px; /* 當 hover 時，文字上移 */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div
+        class="card"
+        style="background-image: url('https://source.unsplash.com/78A265wPiO4')"
+      >
+        <h3>The Hills</h3>
+      </div>
+      <div
+        class="card"
+        style="background-image: url('https://source.unsplash.com/TFyi0QOx08c')"
+      >
+        <h3>The Forest</h3>
+      </div>
+      <div
+        class="card"
+        style="background-image: url('https://source.unsplash.com/PP8Escz15d8')"
+      >
+        <h3>The Desert</h3>
+      </div>
+    </div>
+  </body>
+</html>
