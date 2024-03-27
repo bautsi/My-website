@@ -85,6 +85,11 @@ h1 {
   letter-spacing: 5px;
 }
 
+h2 {
+  word-spacing: 15px;
+  letter-spacing: 5px;
+}
+
 p {
   font-size: 20px;
   word-spacing: 10px;
@@ -111,20 +116,20 @@ img {
   align-items: center;
   height: 100vh;
   background-image: url(https://images.unsplash.com/photo-1553696590-4b3f68898333?ixlib=rb-4.0.3);
-  background-size: 1920px 1080px; /* 或者使用具體的尺寸，例如 '1920px 1080px' */
-  background-position: center top; /* 水平置中，垂直貼頂部 */
+  background-size: 1920px 1080px; /* 嚙諄者使用剁蕭嚙賡的嚙諍寸嚙璀嚙課如 '1920px 1080px' */
+  background-position: center top; /* 嚙踝蕭嚙踝蕭嚙練嚙踝蕭嚙璀嚙踝蕭嚙踝蕭嚙皺嚙踝蕭嚙踝蕭 */
   background-repeat: no-repeat;
-  background-attachment: fixed; /* 固定背景圖像 */
+  background-attachment: fixed; /* 嚙確嚙緩嚙瘢嚙踝蕭嚙誕對蕭 */
 }
 
 #college {
-  border: 1px solid;
+  /* border: 1px solid; */
   height: 50vh;
   width: 100%;
   background-color: #ba3b0a;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   color: #ffffff;
 }
 
@@ -133,13 +138,13 @@ img {
 }
 
 #highschool {
-  border: 1px solid;
+  /* border: 1px solid; */
   height: 50vh;
   width: 100%;
   background-color: #f9f6ed;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 #highschool img {
@@ -148,9 +153,4 @@ img {
 
 #thirdPage {
   height: 100vh;
-  background-image: url(https://i.pinimg.com/originals/b3/19/d8/b319d809655f965c91ea4f4cb4340091.jpg);
-  background-size: 1920px 1080px; /* 或者使用具體的尺寸，例如 '1920px 1080px' */
-  background-position: center top; /* 水平置中，垂直貼頂部 */
-  background-repeat: no-repeat;
-  background-attachment: fixed; /* 固定背景圖像 */
 }

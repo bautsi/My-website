@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <title>圖片輪播示例</title>
+    <style>
+      .radio-button {
+        /* 樣式按需定制 */
+      }
+      #image-display {
+        width: 80%;
+        margin: 20px auto;
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: center;
+      }
+      .control-button {
+        /* 樣式按需定制 */
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <input
+        type="radio"
+        id="ckslc"
+        name="imageSet"
+        class="radio-button"
+        checked
+      />
+      ckslc
+      <input type="radio" id="ncupd" name="imageSet" class="radio-button" />
+      ncupd
+    </div>
+    <div id="image-display">
+      <!-- 圖片將在這裡顯示 -->
+    </div>
+    <button class="control-button" onclick="previousImage()">＜左</button>
+    <button class="control-button" onclick="nextImage()">右＞</button>
+
+    <script>
+      // JavaScript 代碼將在這裡
+      let currentSet = 0; // 0 表示 ckslc, 1 表示 ncupd
+      let currentIndex = 0;
+      let interval;
+
+      const imageSets = [
+        ["image1.jpg", "image2.jpg", "image3.jpg"], // ckslc 的圖片集
+        ["image4.jpg", "image5.jpg", "image6.jpg"], // ncupd 的圖片集
+      ];
+
+      document.querySelectorAll('input[name="imageSet"]').forEach((radio) => {
+        radio.addEventListener("change", function () {
+          currentSet = this.id === "ckslc" ? 0 : 1;
+          currentIndex = 0;
+          displayImage();
+          startAutoPlay();
+        });
+      });
+
+      function displayImage() {
+        const imageDisplay = document.getElementById("image-display");
+        imageDisplay.innerHTML =
+          '<img src="' +
+          imageSets[currentSet][currentIndex] +
+          '" alt="Image" />';
+      }
+
+      function nextImage() {
+        currentIndex = (currentIndex + 1) % imageSets[currentSet].length;
+        displayImage();
+      }
+
+      function previousImage() {
+        currentIndex =
+          (currentIndex - 1 + imageSets[currentSet].length) %
+          imageSets[currentSet].length;
+        displayImage();
+      }
+
+      function startAutoPlay() {
+        clearInterval(interval);
+        interval = setInterval(nextImage, 5000); // 每 5 秒切換圖片
+      }
+
+      // 初始化
+      displayImage();
+      startAutoPlay();
+    </script>
+  </body>
+</html>
