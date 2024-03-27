@@ -62,4 +62,4 @@ function preloadImages() {
   });
 }
 
-window.onload = preloadImages; // 頁面載入時預載圖片
+window.onload = preloadImages;
