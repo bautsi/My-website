@@ -49,3 +49,17 @@ right.addEventListener("click", () => {
   }
   updateImage();
 });
+
+function preloadImages() {
+  ncupdImgNum.forEach((num) => {
+    const img = new Image();
+    img.src = `images/ncupd/ncupd${num}.jpg`;
+  });
+
+  ckslcImgNum.forEach((num) => {
+    const img = new Image();
+    img.src = `images/ckslc/ckslc${num}.jpg`;
+  });
+}
+
+window.onload = preloadImages; // 頁面載入時預載圖片
