@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marquee with Dragging</title>
+    <style>
+      body,
+      html {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-size: 10px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .marquee {
+        overflow: hidden;
+        width: 100%;
+        position: relative;
+        box-shadow: 0px 0px 0px 1px white inset;
+      }
+
+      .track {
+        display: flex;
+        position: relative;
+      }
+
+      .item {
+        flex: none;
+        width: auto;
+        padding: 6rem; /* Adjust padding */
+      }
+
+      .item img {
+        width: 100%;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="marquee">
+      <div class="track">
+        <!-- Images from image1.jpg to image6.jpg -->
+        <div class="item"><img src="image1.jpg" /></div>
+        <div class="item"><img src="image2.jpg" /></div>
+        <div class="item"><img src="image3.jpg" /></div>
+        <div class="item"><img src="image4.jpg" /></div>
+        <div class="item"><img src="image5.jpg" /></div>
+        <div class="item"><img src="image6.jpg" /></div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/Draggable.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const track = document.querySelector(".track");
+        let totalWidth = 0;
+
+        document.querySelectorAll(".item").forEach((item) => {
+          totalWidth += item.offsetWidth;
+        });
+
+        const marqueeTween = gsap.to(track, {
+          x: () => `-${totalWidth}px`,
+          ease: "none",
+          repeat: -1,
+          duration: totalWidth / 20, // Adjust scrolling speed
+          paused: true,
+          modifiers: {
+            x: gsap.utils.unitize((x) => parseFloat(x) % totalWidth),
+          },
+        });
+
+        Draggable.create(track, {
+          type: "x",
+          bounds: ".marquee",
+          onDrag() {
+            marqueeTween.pause();
+          },
+          onDragEnd() {
+            marqueeTween.play();
+          },
+        });
+
+        marqueeTween.play();
+      });
+    </script>
+  </body>
+</html>

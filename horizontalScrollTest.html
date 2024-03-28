@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>持续滚动的图片轮播</title>
+    <style>
+      #carousel-container {
+        width: 600px;
+        overflow: hidden;
+        margin: 0 auto;
+        position: relative;
+      }
+
+      #carousel {
+        display: flex;
+        width: calc(300px * 12); /* 每张图片300px宽，共12张 */
+        animation: scroll 20s linear infinite;
+      }
+
+      .carousel-item {
+        width: 300px;
+        flex-shrink: 0;
+      }
+
+      .carousel-item img {
+        width: 100%;
+        height: auto;
+      }
+
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="carousel-container">
+      <div id="carousel">
+        <!-- 图片列表，需要复制一遍以实现无缝滚动 -->
+        <div class="carousel-item"><img src="image1.jpg" alt="Image 1" /></div>
+        <!-- ... 其他图片 ... -->
+        <div class="carousel-item"><img src="image2.jpg" alt="Image 1" /></div>
+        <div class="carousel-item"><img src="image3.jpg" alt="Image 1" /></div>
+        <div class="carousel-item"><img src="image4.jpg" alt="Image 1" /></div>
+        <div class="carousel-item"><img src="image5.jpg" alt="Image 1" /></div>
+        <div class="carousel-item"><img src="image6.jpg" alt="Image 6" /></div>
+
+        <!-- 重复的图片，用于实现无缝滚动 -->
+        <div class="carousel-item"><img src="image1.jpg" alt="Image 1" /></div>
+        <!-- ... 其他图片 ... -->
+        <div class="carousel-item"><img src="image2.jpg" alt="Image 1" /></div>
+        <div class="carousel-item"><img src="image3.jpg" alt="Image 1" /></div>
+        <div class="carousel-item"><img src="image4.jpg" alt="Image 1" /></div>
+        <div class="carousel-item"><img src="image5.jpg" alt="Image 1" /></div>
+        <div class="carousel-item"><img src="image6.jpg" alt="Image 6" /></div>
+      </div>
+    </div>
+
+    <script>
+      const carousel = document.getElementById("carousel");
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+
+      carousel.addEventListener("mousedown", (e) => {
+        isDown = true;
+        carousel.style.cursor = "grabbing";
+        startX = e.pageX - carousel.offsetLeft;
+        scrollLeft = carousel.scrollLeft;
+        carousel.style.animationPlayState = "paused"; // 暂停动画
+      });
+
+      carousel.addEventListener("mouseleave", () => {
+        if (isDown) {
+          isDown = false;
+          carousel.style.cursor = "grab";
+          carousel.style.animationPlayState = "running"; // 恢复动画
+        }
+      });
+
+      carousel.addEventListener("mouseup", () => {
+        isDown = false;
+        carousel.style.cursor = "grab";
+        carousel.style.animationPlayState = "running"; // 恢复动画
+      });
+
+      carousel.addEventListener("mousemove", (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - carousel.offsetLeft;
+        const walk = (x - startX) * 3; // 滚动速度
+        carousel.scrollLeft = scrollLeft - walk;
+      });
+
+      carousel.addEventListener("dragstart", (e) => {
+        e.preventDefault();
+      });
+    </script>
+  </body>
+</html>
