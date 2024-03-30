@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        background-image: url(meme.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #container {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        width: auto;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #head {
+        height: 5vh;
+        width: 90vh;
+        margin-bottom: 10px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #meme {
+        margin: 0;
+        font-family: monospace;
+        font-weight: bold;
+        font-size: 4rem;
+        color: white;
+      }
+
+      #pics {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 91vh;
+        width: 91vh;
+      }
+
+      .row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        height: 30vh;
+        width: 100%;
+        margin: 2px;
+      }
+
+      .box {
+        height: 30vh;
+        width: 30vh;
+        margin-right: 2px;
+        margin-left: 2px;
+      }
+
+      a {
+        position: relative;
+        height: 30vh;
+        width: 30vh;
+      }
+
+      .pictures {
+        position: absolute;
+        object-fit: cover;
+        height: 30vh;
+        width: 30vh;
+      }
+
+      .box:hover .pictures {
+        -webkit-filter: brightness(0.7);
+        filter: brightness(0.7);
+      }
+
+      .box:hover .icons {
+        -webkit-filter: brightness(0.7);
+        filter: brightness(0.7);
+      }
+
+      .icons {
+        position: absolute;
+        height: 20px;
+        left: 27vh;
+        top: 0.7vh;
+      }
+
+      .links {
+        position: absolute;
+        height: 2.7vh;
+        left: 14vh;
+        top: 14vh;
+        display: none;
+        isolation: isolate;
+      }
+
+      .box:hover .links {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="head">
+        <h1 id="meme">MEME</h1>
+      </div>
+      <div id="pics">
+        <div id="row1" class="row">
+          <div id="elonma" class="box">
+            <a href="https://www.instagram.com/p/CxVrUKxr6dQ/" target="_blank">
+              <img
+                src="images/instagram/thumbnails/elonma.jpg"
+                alt="elonma"
+                class="pictures"
+              />
+              <img
+                src="images/icons/instagramReelsIcon.png"
+                alt="instagram-icon"
+                class="icons"
+              />
+              <img src="images/icons/link.png" alt="link" class="links" />
+            </a>
+          </div>
+          <div id="genshin" class="box">
+            <a href="https://www.instagram.com/p/CuIPmB4v2nR/" target="_blank">
+              <img
+                src="images/instagram/thumbnails/geshin.jpg"
+                alt="genshin"
+                class="pictures"
+              />
+              <img
+                src="images/icons/instagramReelsIcon.png"
+                alt="instagram-icon"
+                class="icons"
+              />
+              <img src="images/icons/link.png" alt="link" class="links" />
+            </a>
+          </div>
+          <div id="waduh" class="box">
+            <a href="https://www.instagram.com/p/C0y8Z2mP_Z0/" target="_blank">
+              <img
+                src="images/instagram/thumbnails/waduh.jpg"
+                alt="waduh"
+                class="pictures"
+              />
+              <img
+                src="images/icons/instagramReelsIcon.png"
+                alt="instagram-icon"
+                class="icons"
+              />
+              <img src="images/icons/link.png" alt="link" class="links" />
+            </a>
+          </div>
+        </div>
+        <div id="row2" class="row">
+          <div id="dongbei" class="box">
+            <a href="https://www.instagram.com/p/C1YkIi_tueD/" target="_blank">
+              <img
+                src="images/instagram/thumbnails/dongbei.jpg"
+                alt="dongbei"
+                class="pictures"
+              />
+              <img
+                src="images/icons/instagramReelsIcon.png"
+                alt="instagram-icon"
+                class="icons"
+              />
+              <img src="images/icons/link.png" alt="link" class="links" />
+            </a>
+          </div>
+          <div id="cat" class="box">
+            <a href="https://www.instagram.com/p/C1xchnnPvN8/" target="_blank">
+              <img
+                src="images/instagram/thumbnails/cat.jpg"
+                alt="cat"
+                class="pictures"
+              />
+              <img
+                src="images/icons/instagramReelsIcon.png"
+                alt="instagram-icon"
+                class="icons"
+              />
+              <img src="images/icons/link.png" alt="link" class="links" />
+            </a>
+          </div>
+          <div id="spiderman" class="box">
+            <a href="https://www.instagram.com/p/C2GJ8QSyRCR/" target="_blank">
+              <img
+                src="images/instagram/thumbnails/spiderman.jpg"
+                alt="spiderman"
+                class="pictures"
+              />
+              <img
+                src="images/icons/instagramReelsIcon.png"
+                alt="instagram-icon"
+                class="icons"
+              />
+              <img src="images/icons/link.png" alt="link" class="links" />
+            </a>
+          </div>
+        </div>
+        <div id="row3" class="row">
+          <div id="mcqueen" class="box">
+            <a href="https://www.instagram.com/p/C25sePGIOcE/" target="_blank">
+              <img
+                src="images/instagram/thumbnails/mcqueen.jpg"
+                alt="mcqueen"
+                class="pictures"
+              />
+              <img
+                src="images/icons/instagramReelsIcon.png"
+                alt="instagram-icon"
+                class="icons"
+              />
+              <img src="images/icons/link.png" alt="link" class="links" />
+            </a>
+          </div>
+          <div id="urdadnoel" class="box">
+            <a href="https://www.instagram.com/p/C3fWAI4OUk1/" target="_blank">
+              <img
+                src="images/instagram/thumbnails/urdadnoel.jpg"
+                alt="urdadnoel"
+                class="pictures"
+              />
+              <img
+                src="images/icons/instagramReelsIcon.png"
+                alt="instagram-icon"
+                class="icons"
+              />
+              <img src="images/icons/link.png" alt="link" class="links" />
+            </a>
+          </div>
+          <div id="helmet" class="box">
+            <a href="https://www.instagram.com/p/C33EaZ3IuhH/" target="_blank">
+              <img
+                src="images/instagram/thumbnails/helmet.jpg"
+                alt="helmet"
+                class="pictures"
+              />
+              <img
+                src="images/icons/instagramReelsIcon.png"
+                alt="instagram-icon"
+                class="icons"
+              />
+              <img src="images/icons/link.png" alt="link" class="links" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
