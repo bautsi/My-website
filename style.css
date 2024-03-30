@@ -333,4 +333,107 @@ img {
 
   height: 100vh;
   /* background-color: #e4e4e4; */
+  background-image: url(meme.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#instagramContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+#head {
+  height: 5vh;
+  width: 90vh;
+  margin-bottom: 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#meme {
+  margin: 0;
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 4rem;
+  color: white;
+}
+
+#pictures {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 91vh;
+  width: 91vh;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 30vh;
+  width: 100%;
+  margin: 2px;
+}
+
+.box {
+  height: 30vh;
+  width: 30vh;
+  margin-right: 2px;
+  margin-left: 2px;
+}
+
+.instagramLink {
+  position: relative;
+  height: 30vh;
+  width: 30vh;
+}
+
+.pictures {
+  position: absolute;
+  object-fit: cover;
+  height: 30vh;
+  width: 30vh;
+  transform: none;
+}
+
+.box:hover .pictures {
+  -webkit-filter: brightness(0.7);
+  filter: brightness(0.7);
+}
+
+.box:hover .instagramIcons {
+  -webkit-filter: brightness(0.7);
+  filter: brightness(0.7);
+}
+
+.instagramIcons {
+  position: absolute;
+  height: 20px;
+  left: 27vh;
+  top: 0.7vh;
+  transform: none;
+}
+
+.iconLink {
+  position: absolute;
+  height: 2.7vh;
+  left: 14vh;
+  top: 14vh;
+  display: none;
+  isolation: isolate;
+  transform: none;
+}
+
+.box:hover .iconLink {
+  display: block;
 }
