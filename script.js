@@ -3,6 +3,9 @@ const ncupd = document.getElementById("ncupd");
 const ckslc = document.getElementById("ckslc");
 const left = document.getElementById("left");
 const right = document.getElementById("right");
+const show = document.getElementById("showBackground");
+const head = document.getElementById("head");
+const pictures = document.getElementById("pictures");
 const ncupdImgNum = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
 const ckslcImgNum = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 
@@ -63,3 +66,15 @@ function preloadImages() {
 }
 
 window.onload = preloadImages;
+
+show.addEventListener("click", () => {
+  if (head.style.display !== "none") {
+    head.style.display = "none";
+    pictures.style.display = "none";
+    show.textContent = "Show Memes";
+  } else if (head.style.display == "none") {
+    head.style.display = "flex";
+    pictures.style.display = "flex";
+    show.textContent = "Show Background";
+  }
+});
