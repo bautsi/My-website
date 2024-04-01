@@ -527,4 +527,20 @@ button:active .button_top {
   #me {
     width: auto;
   }
+
+  #a-bun {
+    display: none;
+  }
+
+  header {
+    justify-content: center;
+  }
+
+  #social-icons a {
+    margin: 0;
+  }
+
+  #social {
+    right: 0;
+  }
 }
