@@ -39,8 +39,6 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  padding-left: 2rem;
-  padding-right: 2rem;
 }
 
 #a-bun {
@@ -95,6 +93,8 @@ header {
   flex-direction: column;
   /* align-items: center; */
   justify-content: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 h1 {
@@ -116,6 +116,7 @@ p {
 #me {
   width: 597.797px;
   /* height: 757.938px; */
+  /* width: auto; */
   height: auto;
 }
 
@@ -501,6 +502,7 @@ button:active .button_top {
   #social {
     flex-direction: column;
     right: 25px;
+    top: 10px;
   }
   #gmail {
     margin-left: 0;
@@ -525,7 +527,18 @@ button:active .button_top {
   }
 
   #me {
+    transform: scale(1);
+    height: 40vh;
     width: auto;
+  }
+
+  #me-container {
+    width: 100%;
+    height: 53vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
   #a-bun {
