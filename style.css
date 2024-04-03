@@ -507,7 +507,24 @@ button:active .button_top {
   transform: translateY(0);
 }
 
+@media only screen and (max-width: 1420px) {
+  #left {
+    left: 3vw;
+  }
+  #right {
+    right: 3vw;
+  }
+}
+
 @media only screen and (max-width: 600px) {
+  #left {
+    left: 3vw;
+    top: 74.4vh;
+  }
+  #right {
+    right: 3vw;
+    top: 74.4vh;
+  }
   #a-bun {
     margin-left: 0;
   }
@@ -627,8 +644,8 @@ button:active .button_top {
   }
 
   .card {
-    margin-bottom: 2vh;
-    width: 100%;
+    margin-bottom: 3vh;
+    width: 90%;
   }
 
   .card:hover {
