@@ -96,6 +96,7 @@ header {
   /* padding-left: 2rem;
   padding-right: 2rem; */
   padding: 5vw;
+  margin-left: 7vw;
   width: 40vw;
   height: auto;
 }
@@ -513,6 +514,82 @@ button:active .button_top {
   }
   #right {
     right: 3vw;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+  #about-selfie-container {
+    flex-direction: column;
+    align-items: center;
+    height: 83.3vh;
+    text-align: center;
+  }
+  #about {
+    width: 90vw;
+    margin: 0;
+    height: 20vh;
+
+    h1 {
+      margin: 0;
+      margin-bottom: 3vh;
+    }
+    p {
+      margin: 0;
+    }
+  }
+  #me-container {
+    height: 41.7vh;
+  }
+  #me {
+    height: 41.7vh;
+  }
+}
+
+@media only screen and (max-width: 713px) {
+  #bun {
+    visibility: hidden;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .row {
+    justify-content: space-around;
+  }
+  #pictures {
+    width: 100vw;
+  }
+  .box {
+    width: 32vw;
+  }
+  .pictures {
+    width: 32vw;
+  }
+  #college {
+    width: 100vw;
+    flex-direction: column;
+
+    img {
+      height: 25vh;
+    }
+    #text {
+      height: 25vh;
+      text-align: center;
+    }
+  }
+  #highschool {
+    width: 100vw;
+    flex-direction: column;
+
+    img {
+      height: 25vh;
+    }
+    #text {
+      height: 25vh;
+      text-align: center;
+    }
+    h2 {
+      display: none;
+    }
   }
 }
 
