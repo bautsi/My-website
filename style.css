@@ -383,7 +383,7 @@ img {
 
 #head {
   height: 5vh;
-  width: 90vh;
+  width: 43.203vw;
   margin-bottom: 10px;
   text-align: center;
   display: flex;
@@ -405,7 +405,7 @@ img {
   justify-content: center;
   align-items: center;
   height: 91vh;
-  width: 91vh;
+  width: 43.203vw;
 }
 
 .row {
@@ -452,7 +452,8 @@ img {
 .instagramIcons {
   position: absolute;
   height: 20px;
-  left: 27vh;
+  /* left: 27vh; */
+  right: -31vw;
   top: 0.7vh;
   transform: none;
 }
@@ -514,6 +515,21 @@ button:active .button_top {
   }
   #right {
     right: 3vw;
+  }
+}
+
+@media only screen and (max-width: 660px) {
+  #a-bun {
+    width: 0;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  .button_top {
+    display: none;
+  }
+  #instagramContainer button {
+    display: none;
   }
 }
 
@@ -622,6 +638,7 @@ button:active .button_top {
   #about {
     text-align: center;
     width: 80vw;
+    margin-left: 0;
   }
 
   #about h1 {
@@ -631,7 +648,7 @@ button:active .button_top {
 
   #about p {
     font-size: 15px;
-    line-height: 20px;
+    line-height: 15px;
   }
 
   #me {
